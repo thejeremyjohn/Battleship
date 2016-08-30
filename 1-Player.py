@@ -21,7 +21,7 @@ def show_board(grid):
 	print
 
 
-def set_ships():
+def place_ships():
 	''' Places ships in backend_grid. '''
 	for ship in ships:
 		# randomized coordinate to "draw" ship.
@@ -181,7 +181,7 @@ if __name__ == '__main__':
 		backend_grid.append([str(i)] + ['_'] * wide)
 		player_grid.append([str(i)] + ['_'] * wide)
 	show_board(player_grid)
-	set_ships()
+	place_ships()
 	backend_grid_copy = deepcopy(backend_grid)
 	ships_remaining = len(ships)
 	turns = 0
