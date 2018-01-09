@@ -1,4 +1,5 @@
 # TO DO: finish docs, debug
+import os
 import sys
 import random
 from time import sleep
@@ -15,7 +16,7 @@ ships = [
 
 def show_board(grid):
 	''' Prints the given grid. '''
-	print
+	os.system('cls')
 	for row in grid:
 		print ' '.join(row)
 	print
@@ -142,6 +143,7 @@ def guess_hit():
 					print '...'
 					sleep(.75)
 					print '... You sank my {} !!!\n'.format(ship[1])
+					sleep(1)
 			show_board(player_grid)
 			return True
 		else:
