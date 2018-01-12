@@ -98,7 +98,7 @@ def get_guess():
 			x, y = map(int, guess.split())
 			if x not in range(wide) or y not in range(high):
 				print '\nWarning: You are leaving the mission area........'
-				print 'x and y must be LESS than {} and {}, respectively.\n'.format(wide, high)
+				print 'coordinates each must be in range 0-9.\n'.format(wide, high)
 				continue
 			return x + 1, y + 1
 		except Exception:
@@ -158,6 +158,7 @@ def guess_hit():
 
 
 if __name__ == '__main__':
+	os.system('cls')
 	print '\n **** Welcome to (1P) Battleship **** \n'
 	sleep(1)
 	print 'I\'ll ask you you to guess a coordinate'
@@ -167,7 +168,7 @@ if __name__ == '__main__':
 	wide = 10
 	high = 10
 	print 'The maximum / default grid size is {}x{}.'.format(wide, high)
-	if raw_input('Enter "y" or "yes" if you want a smaller grid.\n-----> ') in ['y', 'yes', 'yeah', 'sure', 'ya', 1]:
+	if raw_input('Enter "small" if you want a smaller grid.\n-----> ') == "small":
 		print
 		wide = min(10, int(raw_input('width  = ')))
 		high = min(10, int(raw_input('height = ')))
@@ -189,6 +190,7 @@ if __name__ == '__main__':
 	turns = 0
 	used = []
 	while ships_remaining > 0:
+		print '{} ships remaining'.format(ships_remaining)
 		if guess_hit():
 			ships_remaining -= 1
 		turns += 1
