@@ -1,6 +1,6 @@
 # Battleship
 
-1-player battleship featuring Terminal graphics
+1-player Battleship featuring Terminal graphics
 
 ## To Play...
 
